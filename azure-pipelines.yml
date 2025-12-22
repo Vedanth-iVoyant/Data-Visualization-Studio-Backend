@@ -1,0 +1,37 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pr:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  NODE_VERSION: '18.x'
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: $(NODE_VERSION)
+    displayName: 'Use Node.js $(NODE_VERSION)'
+
+  - script: npm install
+    displayName: 'Install dependencies'
+
+  # Optional: run tests (enable if you have tests)
+  # - script: npm run test
+  #   displayName: 'Run tests'
+
+  - script: npm run build
+    displayName: 'Build NestJS app'
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathToPublish: dist
+      artifactName: backend-dist
+    displayName: 'Publish build artifact'
