@@ -1,0 +1,112 @@
+{
+  "id": "nORlifgHVqxDCCwUdGSuc",
+  "name": "New Workflow",
+  "workflowName": "New Workflow",
+  "itemType": "workflow",
+  "appId": "ajuaHdabYqkMgmErGUwDe",
+  "folderId": "5qDinIhIl3rml0cTw2iSw",
+  "type": "ORCHESTRATION",
+  "version": "0.0.1",
+  "steps": [
+    {
+      "id": "oNwRxLuswSWTMHlliLCXX",
+      "stepName": "RESTService",
+      "stepType": "EVENT_SOURCE",
+      "icon": "",
+      "indicator": "",
+      "description": "",
+      "deletable": true,
+      "config": {
+        "activityName": "RESTService",
+        "activityGroup": "HTTP",
+        "activityType": "EVENT_SOURCE",
+        "name": "RESTService",
+        "description": "",
+        "path": "/test",
+        "method": [
+          "GET"
+        ],
+        "allowedMediaTypes": [
+          "application/json"
+        ],
+        "headers": [],
+        "queryParams": [],
+        "pathParams": [],
+        "output": "",
+        "activityStatus": "APPROVED",
+        "showHttpFormSelectionPanel": false,
+        "config.name": "RESTService",
+        "sourceSchemas": []
+      },
+      "activityCluster": null
+    },
+    {
+      "id": "zFYbneaDslDPjJPSwLbQy",
+      "stepName": "End",
+      "stepType": "END",
+      "icon": "",
+      "indicator": "",
+      "description": "",
+      "deletable": true,
+      "config": {
+        "activityType": "END",
+        "activityName": "End",
+        "activityGroup": "Common",
+        "name": "End",
+        "sourceSchemas": [
+          "oNwRxLuswSWTMHlliLCXX"
+        ],
+        "config.name": "End"
+      }
+    }
+  ],
+  "transitions": [
+    {
+      "id": "initialEdge",
+      "from": "oNwRxLuswSWTMHlliLCXX",
+      "to": "zFYbneaDslDPjJPSwLbQy",
+      "handleMap": {
+        "source": "oNwRxLuswSWTMHlliLCXX_1",
+        "target": "zFYbneaDslDPjJPSwLbQy_1"
+      },
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "#8c8c8c"
+    }
+  ],
+  "diagram": {
+    "oNwRxLuswSWTMHlliLCXX": {
+      "x": 16,
+      "y": 48,
+      "handles": [
+        {
+          "type": "source",
+          "position": "right",
+          "id": "oNwRxLuswSWTMHlliLCXX_1"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": null
+    },
+    "zFYbneaDslDPjJPSwLbQy": {
+      "x": 512,
+      "y": 48,
+      "handles": [
+        {
+          "type": "source",
+          "position": "left",
+          "id": "zFYbneaDslDPjJPSwLbQy_1"
+        }
+      ],
+      "sourcePosition": null,
+      "targetPosition": "left"
+    }
+  },
+  "mappings": {},
+  "notes": [],
+  "config": {
+    "name": "New Workflow"
+  }
+}
